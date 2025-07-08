@@ -1,4 +1,4 @@
-# Angular + Jenkins + Nginx Docker CI Pipeline
+# Jenkins CI Pipeline: Angular Build to Nginx Docker Image
 
 This project demonstrates a CI pipeline using **Jenkins with Docker agents** to build an Angular application and package it into an Nginx Docker image. The Jenkins server itself runs in Docker and leverages the host's Docker daemon to build and manage containers.
 
