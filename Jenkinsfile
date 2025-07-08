@@ -29,7 +29,8 @@ pipeline {
         unstash 'angular-build'
         sh '''
           cp -r dist/angular-app/browser/* ./nginx-app/
-          docker build -t my-angular-nginx ./nginx-app
+          cd nginx-app
+          docker build -t my-angular-nginx .
         '''
       }
     }
