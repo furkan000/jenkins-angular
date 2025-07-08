@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         sh '''
+          cd angular-app
           npm install -g @angular/cli
           npm install
           ng build --configuration=production
@@ -28,7 +29,7 @@ pipeline {
       steps {
         unstash 'angular-build'
         sh '''
-          cp -r dist/angular-app/browser/* ./nginx-app/
+          cp -r angular-app/dist/angular-app/browser/* ./nginx-app/
           cd nginx-app
           docker build -t my-angular-nginx .
         '''
